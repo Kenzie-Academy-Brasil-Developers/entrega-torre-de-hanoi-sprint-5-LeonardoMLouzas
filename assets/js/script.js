@@ -25,11 +25,14 @@ function interceptar(evt){
     }
 
     //Gera os blocos
-    for (maxBlocks;maxBlocks > 0; maxBlocks--){
+    for (maxBlocks; maxBlocks > 0; maxBlocks--){
         const torre = document.getElementsByClassName("torre1");
         const bloco = document.createElement("div");
         bloco.classList.add("bloco");
         bloco.setAttribute("id","bloco"+ maxBlocks);
         torre[0].appendChild(bloco);
     }
+
+    //esconde os botões após click
+    botoes.classList.add("hidden");
 }

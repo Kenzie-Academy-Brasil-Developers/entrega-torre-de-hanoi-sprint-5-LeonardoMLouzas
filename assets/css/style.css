@@ -31,7 +31,10 @@ div{
 }
 
 .torre{
-    display: column;
+    justify-content: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .bloco {
     height: 30px;
@@ -57,4 +60,8 @@ div{
 
 #bloco5{
     width: 100px;
+}
+
+.hidden{
+    display: none;
 }
