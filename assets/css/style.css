@@ -1,0 +1,33 @@
+header{
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    margin-bottom: 50px;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+}
+div{
+    width: 300px;
+    height: 400px;
+    border: 2px solid green;
+}
+
+.bloco {
+    height: 30px;
+    border-radius: 10%;
+    background-color: brown;
+}
+
+#bloco1{
+    width: 150px;
+}
+
+#bloco2{
+    width: 100px;
+}
+
+#bloco3{
+    width: 50px;
+}
