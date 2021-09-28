@@ -6,22 +6,28 @@ for (let i = 0; i < 3; i++){
     torres.classList.add("torre","torre"+(i+1));
 }
 
+
 //Controle dos botões para gerar os Blocos
 const botoes = document.querySelector(".controls");
-botoes.addEventListener("click", interceptar);
+botoes.addEventListener("click", interceptarConfig);
 
-function interceptar(evt){
+function interceptarConfig(evt){
     const button = evt.target;
     let maxBlocks = 0;
 
     if (button.id == "playwith3") {
         maxBlocks = 3;
+        botoes.classList.add("hidden");
     }
     if (button.id == "playwith4") {
         maxBlocks = 4;
+
+        botoes.classList.add("hidden");
     }
     if (button.id == "playwith5") {
         maxBlocks = 5;
+
+        botoes.classList.add("hidden");
     }
 
     //Gera os blocos
@@ -34,5 +40,20 @@ function interceptar(evt){
     }
 
     //esconde os botões após click
-    botoes.classList.add("hidden");
+}
+
+//controle dos blocos
+const torres = document.querySelector(".game");
+console.log(torres)
+
+torres.addEventListener("click",interceptarAcao);
+
+function interceptarAcao(evt) {
+
+    const bloco = evt.target.firstChild;
+    console.log(bloco)
+
+    //testando mudança de torre
+    const torre2 = document.getElementsByClassName("torre2");
+    torre2[0].appendChild(bloco);
 }
