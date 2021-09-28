@@ -4,31 +4,57 @@ header{
     background-color: lightblue;
     margin-bottom: 50px;
 }
-section{
+.game{
     display: flex;
     justify-content: space-around;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+}
+.controls button{
+    background-color: green;
+    margin: 20px;
+    width: 10vh;
+    height: 7vh;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: 2px solid blue;
+    border-radius: 10px;
 }
 div{
     width: 400px;
     height: 400px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 2px solid green;
 }
 
+.torre{
+    display: column;
+}
 .bloco {
     height: 30px;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: brown;
 }
 
 #bloco1{
-    width: 250px;
+    width: 300px;
 }
 
 #bloco2{
-    width: 200px;
+    width: 250px;
 }
 
 #bloco3{
+    width: 200px;
+}
+
+#bloco4{
     width: 150px;
+}
+
+#bloco5{
+    width: 100px;
 }
