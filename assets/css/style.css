@@ -40,15 +40,11 @@ h1{
     cursor: pointer;
 }
 
-
-div{
+.torre{
+    border-radius: 10px;
     width: 400px;
     height: 400px;
-    border-radius: 10px;
     border: 2px solid black;
-}
-
-.torre{
     justify-content: end;
     display: flex;
     flex-direction: column-reverse;
@@ -73,27 +69,27 @@ div{
     background-color: brown;
 }
 
-#bloco1{
+#bloco0{
     width: 300px;
     background-color: blue;
 }
 
-#bloco2{
+#bloco1{
     width: 250px;
     background-color: yellow;
 }
 
-#bloco3{
+#bloco2{
     width: 200px;
     background-color: orange
 }
 
-#bloco4{
+#bloco3{
     width: 150px;
     background-color: fuchsia
 }
 
-#bloco5{
+#bloco4{
     width: 100px;
 }
 
