@@ -1,11 +1,3 @@
-//Gera as torres
-for (let i = 0; i < 3; i++){
-    const body = document.querySelector("section");
-    const torres = document.createElement("div");
-    body.appendChild(torres);
-    torres.classList.add("torre","torre"+(i+1));
-}
-
 
 //Controle dos botões para gerar os Blocos
 const botoes = document.querySelector(".controls");
@@ -30,30 +22,86 @@ function interceptarConfig(evt){
         botoes.classList.add("hidden");
     }
 
-    //Gera os blocos
-    for (maxBlocks; maxBlocks > 0; maxBlocks--){
+//Gera os blocos
+    for (let i = 0; i < maxBlocks; i++){
         const torre = document.getElementsByClassName("torre1");
         const bloco = document.createElement("div");
         bloco.classList.add("bloco");
-        bloco.setAttribute("id","bloco"+ maxBlocks);
+        bloco.setAttribute("id","bloco" + i);
         torre[0].appendChild(bloco);
     }
 
     //esconde os botões após click
 }
 
-//controle dos blocos
-const torres = document.querySelector(".game");
-console.log(torres)
+//controle das torres
+const torre = document.querySelector(".game");
 
-torres.addEventListener("click",interceptarAcao);
 
+torre.addEventListener("dblclick",interceptarAcao);
+const primeiraTorre = document.querySelector(".torre1")
+const segundaTorre = document.querySelector(".torre2")
+const terceiraTorre = document.querySelector(".torre3")
+
+
+
+
+//verificar qual torre esta selecionada
 function interceptarAcao(evt) {
+     alvoTorre = evt.target;
+     console.log(alvoTorre) 
+     
+    
+    if(alvoTorre === primeiraTorre){
+        primeiraTorre.classList.add("selectedTower")
+        terceiraTorre.classList.remove("selectedTower")
+        segundaTorre.classList.remove("selectedTower")   
+            
+    } else if(alvoTorre === segundaTorre){
+        primeiraTorre.classList.remove("selectedTower")
+        segundaTorre.classList.add("selectedTower")
+        terceiraTorre.classList.remove("selectedTower")
+        //Adicionar itens
 
-    const bloco = evt.target.firstChild;
-    console.log(bloco)
+        
+        alvoTorre.appendChild(primeiraTorre.firstChild)
 
-    //testando mudança de torre
-    const torre2 = document.getElementsByClassName("torre2");
-    torre2[0].appendChild(bloco);
+    } else if(alvoTorre === terceiraTorre){
+        terceiraTorre.classList.add("selectedTower")
+        primeiraTorre.classList.remove("selectedTower")
+        segundaTorre.classList.remove("selectedTower")
+    }
+
 }
+
+//contagem de discos nas torres
+primeiraTorre.addEventListener("click", contarDiscos)
+segundaTorre.addEventListener("click", contarDiscos)
+terceiraTorre.addEventListener("click", contarDiscos)
+function contarDiscos(evt){
+    let contagemDeDiscos = evt.target.childElementCount 
+    console.log(contagemDeDiscos)
+} 
+
+//ultimo disco da torre
+primeiraTorre.addEventListener("click",verificarUltimoDisco)
+segundaTorre.addEventListener("click",verificarUltimoDisco)
+terceiraTorre.addEventListener("click",verificarUltimoDisco)
+
+function verificarUltimoDisco(evt){
+    let qualUltimoDisco = evt.target;
+    let ultimoDisco = qualUltimoDisco.firstElementChild;
+    return ultimoDisco
+}
+//adicionando disco na torre
+
+// const bloco = evt.target.firstChild;
+    // console.log(bloco)    
+
+    // //testando mudança de torre
+    // const torre2 = document.getElementsByClassName("torre2");
+    // torre2[0].appendChild(bloco);
+
+
+
+
