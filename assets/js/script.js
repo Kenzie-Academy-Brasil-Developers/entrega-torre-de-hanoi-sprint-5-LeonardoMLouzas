@@ -66,8 +66,11 @@ function interceptarAcao(evt) {
     ) {
       alvo.appendChild(bloco);
       countClick = 0;
+
       countMovimentos++;
-      console.log(countMovimentos)
+      let movimento = document.getElementById("movimentos").innerText = "Movimentos: " + countMovimentos;
+
+      // console.log(countMovimentos)
     } else {
       console.log("Bloco superior da torre menor que o bloco selecionado.");
       countClick = 0;
