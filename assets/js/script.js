@@ -48,21 +48,30 @@ let countClick = 0;
 let bloco;
 //controle dos blocos
 const torres = document.querySelector(".game");
-console.log(torres)
 
 torres.addEventListener("click",interceptarAcao);
 
 function interceptarAcao(evt) {
 
-    if (countClick === 0) {
+    
+    if (countClick === 0 && evt.target.childElementCount !== 0) {
 
         bloco = evt.target.firstChild;
-
-        countClick = 1;
-    } else {
         
+        countClick = 1;
+    } else if (countClick === 0 && evt.target.childElementCount === 0){
+        console.log("Não há bloco")
+    } else {
+
         const alvo = evt.target;
-        alvo.appendChild(bloco);
-        countClick = 0;
+
+        if ((alvo.childElementCount === 0 )|| (alvo.firstChild.clientWidth > bloco.clientWidth)){
+            alvo.appendChild(bloco);
+            countClick = 0;
+
+        } else {
+            console.log("Bloco superior da torre menor que o bloco selecionado.")
+            countClick = 0;
+        }
     }
 }
