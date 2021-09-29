@@ -26,18 +26,20 @@ function interceptarConfig(evt) {
   if (button.id == "playwith5") {
     maxBlocks = 5;
 
-    botoes.classList.add("hidden");
+    botoes.classList.add("hidden")
+   
   }
 
   //Gera os blocos
-  for (maxBlocks; maxBlocks > 0; maxBlocks--) {
+  for (i = 0; i < maxBlocks; i++) {
     const torre = document.getElementsByClassName("torre1");
     const bloco = document.createElement("div");
     bloco.classList.add("bloco");
-    bloco.setAttribute("id", "bloco" + maxBlocks);
+    bloco.setAttribute("id", "bloco" + i);
     torre[0].appendChild(bloco);
+    
   }
-
+    
   //esconde os botões após click
 }
 
@@ -50,7 +52,7 @@ torres.addEventListener("click", interceptarAcao);
 
 function interceptarAcao(evt) {
   if (countClick === 0 && evt.target.childElementCount !== 0) {
-    bloco = evt.target.firstChild;
+    bloco = evt.target.lastChild;
 
     countClick = 1;
   } else if (countClick === 0 && evt.target.childElementCount === 0) {
@@ -60,7 +62,7 @@ function interceptarAcao(evt) {
 
     if (
       alvo.childElementCount === 0 ||
-      alvo.firstChild.clientWidth > bloco.clientWidth
+      alvo.lastChild.clientWidth > bloco.clientWidth
     ) {
       alvo.appendChild(bloco);
       countClick = 0;
@@ -69,5 +71,6 @@ function interceptarAcao(evt) {
       countClick = 0;
     }
   }
+    
 }
     
