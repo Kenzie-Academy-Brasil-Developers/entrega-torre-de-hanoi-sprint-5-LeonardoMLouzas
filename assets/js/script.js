@@ -1,3 +1,4 @@
+
 //Gera as torres
 for (let i = 0; i < 3; i++){
     const body = document.querySelector("section");
@@ -42,6 +43,9 @@ function interceptarConfig(evt){
     //esconde os botões após click
 }
 
+
+let countClick = 0;
+let bloco;
 //controle dos blocos
 const torres = document.querySelector(".game");
 console.log(torres)
@@ -50,10 +54,15 @@ torres.addEventListener("click",interceptarAcao);
 
 function interceptarAcao(evt) {
 
-    const bloco = evt.target.firstChild;
-    console.log(bloco)
+    if (countClick === 0) {
 
-    //testando mudança de torre
-    const torre2 = document.getElementsByClassName("torre2");
-    torre2[0].appendChild(bloco);
+        bloco = evt.target.firstChild;
+
+        countClick = 1;
+    } else {
+        
+        const alvo = evt.target;
+        alvo.appendChild(bloco);
+        countClick = 0;
+    }
 }
