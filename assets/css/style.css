@@ -27,14 +27,12 @@ h1{
     border: 2px solid blue;
     border-radius: 10px;
 }
-div{
+
+.torre{
     width: 400px;
     height: 400px;
     border-radius: 10px;
     border: 2px solid greenyellow;
-}
-
-.torre{
     justify-content: end;
     display: flex;
     flex-direction: column-reverse;
@@ -50,28 +48,29 @@ div{
 
 
 .bloco {
+    border: 2px solid greenyellow;
     height: 30px;
     border-radius: 10px;
     background-color: brown;
 }
 
-#bloco1{
+#bloco0{
     width: 300px;
 }
 
-#bloco2{
+#bloco1{
     width: 250px;
 }
 
-#bloco3{
+#bloco2{
     width: 200px;
 }
 
-#bloco4{
+#bloco3{
     width: 150px;
 }
 
-#bloco5{
+#bloco4{
     width: 100px;
 }
 
