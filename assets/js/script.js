@@ -59,17 +59,24 @@ function interceptarAcao(evt) {
     console.log("Não há bloco");
   } else {
     const alvo = evt.target;
+    
 
     if (
       alvo.childElementCount === 0 ||
       alvo.lastChild.clientWidth > bloco.clientWidth
     ) {
       alvo.appendChild(bloco);
-      countClick = 0;
-    } else {
+      
+   
+     }else {
       console.log("Bloco superior da torre menor que o bloco selecionado.");
       countClick = 0;
     }
-  }
-    
+
+ }
+  
 }
+
+
+    
+
