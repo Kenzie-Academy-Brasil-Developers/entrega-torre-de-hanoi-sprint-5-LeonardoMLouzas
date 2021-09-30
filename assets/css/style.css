@@ -4,21 +4,7 @@
         flex-direction: column;
         align-items: center;
     }
-
-    .game{
-        flex-direction: column;
-        align-items: center;
-        height: 500px;
-      
-    }
-
-    .torre{
-        height: 0px;
-    }
-
-
-    
-    }
+}
 
 
 header{
@@ -46,6 +32,7 @@ h1{
 .controls button{
     font-family: 'Play';
     background-color: black;
+    font-size: 20px;
     margin: 20px;
     width: 20vh;
     height: 7vh;
@@ -66,7 +53,7 @@ h1{
 .torre{
     border-radius: 10px;
     width: 400px;
-    height: 400px;
+    height: 300px;
     border: 2px solid black;
     justify-content: end;
     display: flex;
@@ -82,29 +69,34 @@ h1{
 }
 
 #bloco0{
-    width: 300px;
+    width: 90%;
     background-color: blue;
 }
 
 #bloco1{
-    width: 250px;
+    width: 80%;
     background-color: yellow;
 }
 
 #bloco2{
-    width: 200px;
+    width: 70%;
     background-color: orange
 }
 
 #bloco3{
-    width: 150px;
+    width: 60%;
     background-color: fuchsia
 }
 
 #bloco4{
-    width: 100px;
+    width: 50%;
 }
 
 .hidden{
     display: none;
+}
+
+#informacoes{
+    font-family: 'Play';
+    font-size: 20px;
 }
