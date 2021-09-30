@@ -1,3 +1,26 @@
+@media screen and (max-width: 768px){
+    .controls{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game{
+        flex-direction: column;
+        align-items: center;
+        height: 500px;
+      
+    }
+
+    .torre{
+        height: 0px;
+    }
+
+
+    
+    }
+
+
 header{
     display: flex;
     justify-content: center;
@@ -49,17 +72,6 @@ h1{
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-}
-
-.torreIniciarJogo{
-    justify-content: end;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.torreBorda {
-    border: 2px solid red;
 }
 
 
