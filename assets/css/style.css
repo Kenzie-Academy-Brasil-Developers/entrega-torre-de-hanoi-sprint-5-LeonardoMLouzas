@@ -97,6 +97,8 @@ h1{
 }
 
 #informacoes{
+    display: flex;
+    justify-content: space-around;
     font-family: 'Play';
     font-size: 20px;
 }

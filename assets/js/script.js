@@ -10,9 +10,9 @@ for (let i = 0; i < 3; i++) {
 const botoes = document.querySelector(".controls");
 botoes.addEventListener("click", interceptarConfig);
 
+let maxBlocks = 0;
 function interceptarConfig(evt) {
   const button = evt.target;
-  let maxBlocks = 0;
 
   if (button.id == "playwith3") {
     maxBlocks = 3;
@@ -26,8 +26,7 @@ function interceptarConfig(evt) {
   if (button.id == "playwith5") {
     maxBlocks = 5;
 
-    botoes.classList.add("hidden")
-   
+    botoes.classList.add("hidden");
   }
 
   //Gera os blocos
@@ -37,9 +36,8 @@ function interceptarConfig(evt) {
     bloco.classList.add("bloco");
     bloco.setAttribute("id", "bloco" + i);
     torre[0].appendChild(bloco);
-    
   }
-    
+
   //esconde os botões após click
 }
 
@@ -68,14 +66,47 @@ function interceptarAcao(evt) {
       countClick = 0;
 
       countMovimentos++;
-      let movimento = document.getElementById("movimentos").innerText = "Movimentos: " + countMovimentos;
+      let movimento = (document.getElementById("movimentos").innerText =
+        "Movimentos: " + countMovimentos);
 
+      vitoria();
       // console.log(countMovimentos)
     } else {
       console.log("Bloco superior da torre menor que o bloco selecionado.");
       countClick = 0;
     }
   }
-    
 }
-    let countMovimentos = 0;
+let countMovimentos = 0;
+let countVitorias = 0;
+
+const torre2 = document.getElementsByClassName("torre2");
+const torre3 = document.getElementsByClassName("torre3");
+
+function vitoria() {
+  if (
+    maxBlocks === 3 &&
+    (torre2[0].childElementCount === 3 || torre3[0].childElementCount === 3)
+  ) {
+    console.log("U win");
+    countVitorias++;
+    let vitoria = (document.getElementById("vitorias").innerText =
+      "Vitórias: " + countVitorias);
+  } else if (
+    maxBlocks === 4 &&
+    (torre2[0].childElementCount === 4 || torre3[0].childElementCount === 4)
+  ) {
+    console.log("U win");
+    countVitorias++;
+    let vitoria = (document.getElementById("vitorias").innerText =
+      "Vitórias: " + countVitorias);
+  } else if (
+    maxBlocks === 5 &&
+    (torre2[0].childElementCount === 5 || torre3[0].childElementCount === 5)
+  ) {
+    console.log("U win");
+    countVitorias++;
+    let vitoria = (document.getElementById("vitorias").innerText =
+      "Vitórias: " + countVitorias);
+  }
+}
