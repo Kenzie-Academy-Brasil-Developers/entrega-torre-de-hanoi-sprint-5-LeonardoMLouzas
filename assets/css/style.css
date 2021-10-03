@@ -63,6 +63,7 @@ h1{
 
 
 .bloco {
+    pointer-events: none;
     height: 30px;
     border-radius: 10px;
     background-color: brown;
