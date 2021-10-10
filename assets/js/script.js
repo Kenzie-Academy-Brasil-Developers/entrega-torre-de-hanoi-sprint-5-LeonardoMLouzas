@@ -77,6 +77,17 @@ function interceptarAcao(evt) {
     }
   }
 }
+
+function venceu() {
+  const elemento = document.querySelector("#modal");
+  elemento.classList.add("mostrar-modal"); 
+    
+  const fechar = document.querySelector("#fechar-botao");
+  fechar.addEventListener("click", () => {
+  elemento.classList.remove("mostrar-modal");
+})
+}
+
 let countMovimentos = 0;
 let countVitorias = 0;
 
@@ -88,7 +99,7 @@ function vitoria() {
     maxBlocks === 3 &&
     (torre2[0].childElementCount === 3 || torre3[0].childElementCount === 3)
   ) {
-    console.log("U win");
+    venceu();
     countVitorias++;
     let vitoria = (document.getElementById("vitorias").innerText =
       "Vitórias: " + countVitorias);
@@ -96,7 +107,7 @@ function vitoria() {
     maxBlocks === 4 &&
     (torre2[0].childElementCount === 4 || torre3[0].childElementCount === 4)
   ) {
-    console.log("U win");
+    venceu();
     countVitorias++;
     let vitoria = (document.getElementById("vitorias").innerText =
       "Vitórias: " + countVitorias);
@@ -104,7 +115,7 @@ function vitoria() {
     maxBlocks === 5 &&
     (torre2[0].childElementCount === 5 || torre3[0].childElementCount === 5)
   ) {
-    console.log("U win");
+    venceu();
     countVitorias++;
     let vitoria = (document.getElementById("vitorias").innerText =
       "Vitórias: " + countVitorias);
