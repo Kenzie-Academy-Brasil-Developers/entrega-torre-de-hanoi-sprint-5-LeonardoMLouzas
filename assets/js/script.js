@@ -50,7 +50,7 @@ const torres = document.querySelector(".game");
 torres.addEventListener("click", interceptarAcao);
 
 function interceptarAcao(evt) {
-  if (countClick === 0 && evt.target.childElementCount !== 0) {
+  if (countClick === 0 && evt.target.childElementCount !== 0 && evt.target.classList.contains("torre")) {
     bloco = evt.target.lastChild;
 
     countClick = 1;
