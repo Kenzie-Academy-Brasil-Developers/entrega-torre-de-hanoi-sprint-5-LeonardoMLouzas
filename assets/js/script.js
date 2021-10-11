@@ -29,8 +29,9 @@ function interceptarConfig(evt) {
     botoes.classList.add("hidden");
   }
 
-  //Gera os blocos
+  //Reseta e gera os blocos
   for (i = 0; i < maxBlocks; i++) {
+
     const torre = document.getElementsByClassName("torre1");
     const bloco = document.createElement("div");
     bloco.classList.add("bloco");
@@ -80,12 +81,16 @@ function interceptarAcao(evt) {
 
 function venceu() {
   const elemento = document.querySelector("#modal");
-  elemento.classList.add("mostrar-modal"); 
-    
+
+  elemento.classList.add("mostrar-modal");
+
   const fechar = document.querySelector("#fechar-botao");
   fechar.addEventListener("click", () => {
-  elemento.classList.remove("mostrar-modal");
-})
+    elemento.classList.remove("mostrar-modal");
+    reset();
+    botoes.classList.remove("hidden");
+
+  })
 }
 
 let countMovimentos = 0;
@@ -120,4 +125,18 @@ function vitoria() {
     let vitoria = (document.getElementById("vitorias").innerText =
       "Vitórias: " + countVitorias);
   }
+}
+
+function reset() {
+
+  countMovimentos = 0;
+  for (let i = 1; i <= 3; i++) {
+    let torre = document.getElementsByClassName(`torre${i}`);
+
+      for (let j = 0; j < maxBlocks; j++) {
+        if (torre[0].childElementCount > 0) {
+          torre[0].removeChild(torre[0].childNodes[0]);
+        }
+      }
+    }
 }
