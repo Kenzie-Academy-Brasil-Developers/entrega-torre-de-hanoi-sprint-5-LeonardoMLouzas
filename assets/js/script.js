@@ -58,23 +58,25 @@ function interceptarAcao(evt) {
     console.log("Não há bloco");
   } else {
     const alvo = evt.target;
+    if (alvo.classList.contains("torre")) {
 
-    if (
-      alvo.childElementCount === 0 ||
-      alvo.lastChild.clientWidth > bloco.clientWidth
-    ) {
-      alvo.appendChild(bloco);
-      countClick = 0;
+      if (
+        alvo.childElementCount === 0 ||
+        alvo.lastChild.clientWidth > bloco.clientWidth
+      ) {
+        alvo.appendChild(bloco);
+        countClick = 0;
 
-      countMovimentos++;
-      let movimento = (document.getElementById("movimentos").innerText =
-        "Movimentos: " + countMovimentos);
+        countMovimentos++;
+        let movimento = (document.getElementById("movimentos").innerText =
+          "Movimentos: " + countMovimentos);
 
-      vitoria();
-      // console.log(countMovimentos)
-    } else {
-      console.log("Bloco superior da torre menor que o bloco selecionado.");
-      countClick = 0;
+        vitoria();
+        // console.log(countMovimentos)
+      } else {
+        console.log("Bloco superior da torre menor que o bloco selecionado.");
+        countClick = 0;
+      }
     }
   }
 }
@@ -133,10 +135,10 @@ function reset() {
   for (let i = 1; i <= 3; i++) {
     let torre = document.getElementsByClassName(`torre${i}`);
 
-      for (let j = 0; j < maxBlocks; j++) {
-        if (torre[0].childElementCount > 0) {
-          torre[0].removeChild(torre[0].childNodes[0]);
-        }
+    for (let j = 0; j < maxBlocks; j++) {
+      if (torre[0].childElementCount > 0) {
+        torre[0].removeChild(torre[0].childNodes[0]);
       }
     }
+  }
 }
