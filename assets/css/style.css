@@ -1,0 +1,182 @@
+*{
+    font-family: 'Play';
+}
+@media screen and (max-width: 768px){
+    .controls{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    align-items: center;
+    margin-bottom: 50px;
+    height: 120px;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+}
+.game{
+    display: flex;
+    justify-content: space-around;
+}
+
+h1{
+    color: greenyellow;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+}
+.controls button{
+    background-color: black;
+    font-size: 20px;
+    margin: 20px;
+    width: 20vh;
+    height: 7vh;
+    color: greenyellow;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+}
+
+.controls button:hover{
+    background-color: greenyellow;
+    border: 2px solid black;
+    color: black;
+    cursor: pointer;
+}
+
+.torre{
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
+    border: 2px solid black;
+    justify-content: end;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.torre:hover{
+    border-color: greenyellow;
+}
+
+
+.bloco {
+    pointer-events: none;
+    height: 30px;
+    border-radius: 10px;
+    background-color: brown;
+}
+
+#bloco0{
+    width: 90%;
+    background-color: blue;
+}
+
+#bloco1{
+    width: 80%;
+    background-color: yellow;
+}
+
+#bloco2{
+    width: 70%;
+    background-color: orange
+}
+
+#bloco3{
+    width: 60%;
+    background-color: fuchsia
+}
+
+#bloco4{
+    width: 50%;
+}
+
+.hidden{
+    display: none;
+}
+
+#informacoes{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.modal {
+    position: fixed;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;       
+  }  
+  .modal-conteudo {
+    background-color: black;
+    padding: 20px;
+    width: 384px;
+    border-radius: 10px; 
+    height: 90px; 
+    font-size: 15px;
+    font-weight: 700;    
+  }
+  .mostrar-modal {
+    opacity: 1;
+    visibility: visible;    
+  }
+  span { 
+    float: right;
+    width: 24px;
+    cursor: pointer;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 15px; 
+  }
+  span:hover {
+    background-color: darkgray;
+  }
+
+#frase{
+    padding-top: 30px;
+    margin: 0;
+    text-align: center;
+    min-width: 350px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.Devs {
+    padding-top: 10px;
+    background-color: black;
+    color: greenyellow;
+    text-align: center;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    font-weight: 900;
+}
+a{
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: black;
+    text-shadow: -1px -1px 0 greenyellow, 1px -1px 0 greenyellow, -1px 1px 0 greenyellow, 1px 1px 0 greenyellow;
+
+}
+a:hover{
+    color: greenyellow;
+}
